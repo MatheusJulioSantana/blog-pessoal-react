@@ -15,10 +15,12 @@ interface AuthProviderProps {
     children: ReactNode
 }
 
+//define o armazenamento de dados - aqui nasce o context
 export const AuthContext = createContext({} as AuthContextProps)
 
+//comparitlha e manipula os dados do contexto
 export function AuthProvider({ children }: AuthProviderProps) {
-
+    //variavel Estado - Objeto Usuario
     const [usuario, setUsuario] = useState<UsuarioLogin>({
         id: 0,
         nome: "",

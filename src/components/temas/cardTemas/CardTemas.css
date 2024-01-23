@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  .fundoCardTemas {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-size: 40% 40%;
+    margin: 0; /* Certifique-se de que a margem é zero */
+    padding: 0; /* Certifique-se de que o preenchimento é zero */
+  }
+  body {
+    background-color: #1E1D39;
+    margin: 0; /* Garante que não haja margens padrão no corpo */
+    padding: 0; /* Garante que não haja preenchimento padrão no corpo */
+  }

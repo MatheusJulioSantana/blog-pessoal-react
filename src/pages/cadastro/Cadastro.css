@@ -1,11 +1,12 @@
 .fundoCadastro {
-      background-image: url(../../assets/Portal.gif);
+      background-image: url(../../assets/Orbe.gif);
       background-color: #1E1D39;
       background-repeat: no-repeat;
       width: 100%;
       min-height: 100vh;
       background-size: cover;
       background-position: center;
+      background-size: 40% 40%;
   }
   form {
     background-color: #1E1D39; /* Mesma cor que a cor de fundo da .fundoLogin */
