@@ -1,20 +1,20 @@
-.titulo{
-    color: blue;
-    text-align: center;
+.titulo {
+  color: blue;
+  text-align: center;
 }
 
-.img{
-    width: 500px;
-    height: 500px;
-    display: block;
-    margin: 10vh;
-    object-fit: contain;
+.img {
+  width: 500px;
+  height: 500px;
+  display: block;
+  margin: 10vh;
+  object-fit: contain;
 }
 .fundoHome {
-    background-color: #1E1D39;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-  }
+  background-color: #1e1d39;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}

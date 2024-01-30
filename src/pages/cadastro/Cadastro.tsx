@@ -6,13 +6,13 @@ import './Cadastro.css'
 
 function Cadastro() {
 
-  //Navegar o usuario pela aplicação
+
   let navigate = useNavigate()
   
-  //Variavel Estado
+  
   const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
-  //Variavel Estado
+
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: '',
@@ -65,8 +65,8 @@ function Cadastro() {
 
     } else {
       alert('Dados inconsistentes. Verifique as informações de cadastro.')
-      setUsuario({ ...usuario, senha: "" }) // Reinicia o campo de Senha
-      setConfirmaSenha("")                  // Reinicia o campo de Confirmar Senha
+      setUsuario({ ...usuario, senha: "" }) 
+      setConfirmaSenha("")                 
     }
   }
 
