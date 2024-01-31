@@ -1,13 +1,14 @@
-import { useState, createContext, ReactNode } from "react";
+import { useState, createContext, ReactNode } from 'react';
 
 interface UserContextType {
   nome: string;
   setNome: React.Dispatch<React.SetStateAction<string>>;
+
 }
 
 export const UserContext = createContext<UserContextType>({
-  nome: "",
-  setNome: () => {},
+  nome: '',
+  setNome: () => {}
 });
 
 interface UserProviderProps {
@@ -15,10 +16,11 @@ interface UserProviderProps {
 }
 
 function UserProvider({ children }: UserProviderProps) {
-  const [nome, setNome] = useState("");
+  const [nome, setNome] = useState('');
+
 
   return (
-    <UserContext.Provider value={{ nome, setNome }}>
+    <UserContext.Provider value={{ nome, setNome}}>
       {children}
     </UserContext.Provider>
   );

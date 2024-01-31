@@ -7,19 +7,19 @@ interface CardPostagemProps {
 
 function CardPostagem({ post }: CardPostagemProps) {
   return (
-    <div className="border-slate-900 border flex flex-col rounded overflow-hidden justify-between">
+    <div className="border-Secundary border-2 border-dashed  flex flex-col rounded overflow-hidden justify-between"style={{ fontFamily: 'Share Tech, sans-serif' }}>
       <div>
-        <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
+        <div className="flex w-full bg-Secundary py-2 px-4 items-center gap-4">
           <img src={post.usuario?.foto} className="h-12 rounded-full" alt="" />
-          <h3 className="text-lg font-bold text-center uppercase ">
+          <h3 className="text-lg font-bold text-center uppercase text-Primary ">
             {post.usuario?.nome}
           </h3>
         </div>
         <div className="p-4 ">
-          <h4 className="text-lg font-semibold uppercase">{post.titulo}</h4>
-          <p>{post.texto}</p>
-          <p>Tema: {post.tema?.descricao}</p>
-          <p>
+          <h4 className="text-lg text-Secundary font-none uppercase" style={{ fontFamily: 'Share Tech Mono, sans-serif' }}>{post.titulo}</h4>
+          <p className="text-Secundary">{post.texto}</p>
+          <p className="text-Secundary ">Tema: {post.tema?.descricao}</p>
+          <p className="text-Secundary ">
             Data:{" "}
             {new Intl.DateTimeFormat(undefined, {
               dateStyle: "full",
@@ -31,14 +31,14 @@ function CardPostagem({ post }: CardPostagemProps) {
       <div className="flex">
         <Link
           to={`/editarPostagem/${post.id}`}
-          className="w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2"
+          className="w-full  rounded border-t-2 border-r-2 border-dashed border-Secundary text-Secundary font-none py-2 flex justify-center transition duration-300 ease-in-out transform hover:bg-Secundary hover:text-Primary  hover:border-Primary "
         >
           <button>Editar</button>
         </Link>
 
         <Link
           to={`/deletarPostagem/${post.id}`}
-          className="text-white bg-red-400 hover:bg-red-700 w-full flex items-center justify-center"
+          className="w-full  rounded border-t-2 border-dashed border-Secundary text-Secundary font-none py-2 flex justify-center transition duration-300 ease-in-out transform hover:bg-Secundary hover:text-Primary hover:border-Primary"
         >
           <button>Deletar</button>
         </Link>

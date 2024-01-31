@@ -5,6 +5,7 @@ import Postagem from "../../../models/Postagem";
 import Tema from "../../../models/Tema";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { toastAlerta } from "../../../utils/toastAlerta";
 
 function FormularioPostagem() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -16,8 +17,7 @@ function FormularioPostagem() {
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
-  const [temas, setTemas] = useState<Tema[]>([]); // Indicamos que o temas é um Array de Objetos de Temas, e a iniciamos com um array vazio
-
+  const [temas, setTemas] = useState<Tema[]>([]);
   const [tema, setTema] = useState<Tema>({
     id: 0,
     descricao: "",
@@ -58,7 +58,7 @@ function FormularioPostagem() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      toastAlerta('Você precisa estar logado', 'info');
       navigate("/");
     }
   }, [token]);
@@ -103,14 +103,14 @@ function FormularioPostagem() {
           },
         });
 
-        alert("Postagem atualizada com sucesso");
+        toastAlerta('Postagem atualizada com sucesso', 'sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes("403")) {
-          alert("O token expirou, favor logar novamente");
+          toastAlerta('O token expirou, favor logar novamente', 'info')
           handleLogout();
         } else {
-          alert("Erro ao atualizar a Postagem");
+          toastAlerta('Erro ao atualizar a Postagem', 'erro');
         }
       }
     } else {
@@ -121,14 +121,14 @@ function FormularioPostagem() {
           },
         });
 
-        alert("Postagem cadastrada com sucesso");
+        toastAlerta('Postagem cadastrada com sucesso', 'sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes("403")) {
-          alert("O token expirou, favor logar novamente");
+          toastAlerta('O token expirou, favor logar novamente', 'info')
           handleLogout();
         } else {
-          alert("Erro ao cadastrar a Postagem");
+          toastAlerta('Erro ao cadastrar a Postagem', 'erro');
         }
       }
     }
@@ -139,7 +139,7 @@ function FormularioPostagem() {
   const carregandoTema = tema.descricao === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
+    <div className="container flex flex-col mx-auto items-center bg-Primary text-Secundary"style={{ fontFamily: 'Share Tech, sans-serif' }}>
       <h1 className="text-4xl text-center my-8">
         {id !== undefined ? "Editar Postagem" : "Cadastrar Postagem"}
       </h1>
@@ -154,7 +154,7 @@ function FormularioPostagem() {
             placeholder="Titulo"
             name="titulo"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-2 border-dashed border-Secundary bg-Primary rounded p-2"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -166,7 +166,7 @@ function FormularioPostagem() {
             placeholder="Texto"
             name="texto"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-2 border-dashed border-Secundary bg-Primary rounded p-2"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -175,7 +175,7 @@ function FormularioPostagem() {
           <select
             name="tema"
             id="tema"
-            className="border p-2 border-slate-800 rounded"
+            className="border-2 border-dashed border-Secundary bg-Primary rounded p-2"
             onChange={(e) => buscarTemaPorId(e.currentTarget.value)}
           >
             <option value="" selected disabled>
@@ -193,7 +193,7 @@ function FormularioPostagem() {
         <button
           disabled={carregandoTema}
           type="submit"
-          className="rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
+          className="rounded disabled:bg-slate-200 bg-Primary hover:bg-Secundary text-Secundary hover:text-Primary font-bold w-1/2 mx-auto py-2 flex justify-center"
         >
           {carregandoTema || isLoading ? (
             <RotatingLines
