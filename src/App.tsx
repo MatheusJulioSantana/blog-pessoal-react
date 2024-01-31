@@ -3,7 +3,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import { ToastContainer } from 'react-toastify'
 
 import Footer from './components/footer/Footer'
-import Navbar from './components/navbar/navbar'
+import Navbar from './components/navbar/Navbar'
 
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
