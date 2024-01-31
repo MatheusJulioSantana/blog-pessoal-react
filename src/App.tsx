@@ -3,7 +3,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import { ToastContainer } from 'react-toastify'
 
 import Footer from './components/footer/Footer'
-import Navbar from './components/navbar/Navbar'
+import Navbar from './components/navbar/Navbar';
 
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -15,8 +15,10 @@ import DeletarTema from "./components/temas/deletarTemas/DeletarTema";
 import ListaPostagens from "./components/postagens/listaPostagens/ListaPostagens";
 import FormularioPostagem from "./components/postagens/formularioPostagem/FormularioPostagem";
 import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem";
+
 import "./App.css";
 import 'react-toastify/dist/ReactToastify.css'; // Habilita a Estilização para os Alertas do Toastify
+
 function App() {
   return (
     <>
