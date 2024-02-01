@@ -1,12 +1,12 @@
 .fundoLogin {
-    background-image: url(../../assets/Portal1.gif);
+    background-image: url(../../assets/Portal.gif);
     background-color: #1E1D39;
     background-repeat: no-repeat;
     min-height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-size: 65% 65%;
+    background-size: 90% 90%;
   }
   form {
     background-color: #1E1D39; 
